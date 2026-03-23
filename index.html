@@ -1,1 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apocalypse Girl - Landing Page Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Pretendard', 'Inter', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { transition: background-color 0.3s, color 0.3s; }
+        .lang-en { display: none; }
+        html[lang="en"] .lang-ko { display: none; }
+        html[lang="en"] .lang-en { display: block; }
+    </style>
+</head>
+<body class="bg-white text-slate-900 dark:bg-zinc-950 dark:text-zinc-100 font-sans antialiased">
 
+    <nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="font-bold tracking-tight text-xl">
+                Apocalypse <span class="text-blue-600 dark:text-blue-400">Girl</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="toggleLanguage()" class="text-sm font-medium px-3 py-1 rounded-full border border-zinc-300 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
+                    <span class="lang-ko">English</span>
+                    <span class="lang-en">한국어</span>
+                </button>
+                <button onclick="toggleTheme()" class="p-2 rounded-full border border-zinc-300 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
+                    <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-20 max-w-4xl mx-auto px-6">
+        <section class="text-center mb-20">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+                <span class="lang-ko">랜딩 페이지 구축 가이드</span>
+                <span class="lang-en">Landing Page Build Guide</span>
+            </h1>
+            <p class="text-lg text-zinc-600 dark:text-zinc-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                <span class="lang-ko">초보자도 쉽게 따라 할 수 있는 웹사이트 제작 및 배포 과정을 소개합니다. "Apocalypse Girl" 영상을 활용한 멋진 페이지를 만들어보세요.</span>
+                <span class="lang-en">Introducing the process of building and deploying a website that beginners can easily follow. Create a stunning page using the "Apocalypse Girl" video.</span>
+            </p>
+
+            <div class="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border border-zinc-200 dark:border-zinc-800 bg-black">
+                <video class="w-full h-full object-cover" controls autoplay muted loop>
+                    <source src="https://raw.githubusercontent.com/ericpark1027/ai_01/main/assets/%EC%83%88%EB%A1%9C%EC%9A%B4%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p class="mt-4 text-sm text-zinc-500 italic">Project Name: Apocalypse Girl</p>
+        </section>
+
+        <section class="space-y-16">
+            <div class="group">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="flex-none w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">1</span>
+                    <h2 class="text-2xl font-bold">
+                        <span class="lang-ko">HTML 구조 설계</span>
+                        <span class="lang-en">Designing HTML Structure</span>
+                    </h2>
+                </div>
+                <div class="pl-14 text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                    <p class="lang-ko">가장 먼저 웹사이트의 뼈대를 만듭니다. semantic 태그(header, main, footer)를 사용하여 검색 엔진이 이해하기 쉬운 구조로 코드를 작성하세요.</p>
+                    <p class="lang-en">First, create the skeleton of your website. Use semantic tags (header, main, footer) to write code that is easy for search engines to understand.</p>
+                </div>
+            </div>
+
+            <div class="group">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="flex-none w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">2</span>
+                    <h2 class="text-2xl font-bold">
+                        <span class="lang-ko">비디오 요소 삽입</span>
+                        <span class="lang-en">Inserting Video Elements</span>
+                    </h2>
+                </div>
+                <div class="pl-14 text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                    <p class="lang-ko">&lt;video&gt; 태그를 사용하여 준비된 소스를 연결합니다. GitHub에 파일을 업로드했다면, 'raw' URL을 사용하여 브라우저에서 직접 재생될 수 있도록 설정해야 합니다.</p>
+                    <p class="lang-en">Connect your prepared source using the &lt;video&gt; tag. If you uploaded files to GitHub, you must use the 'raw' URL so that it can be played directly in the browser.</p>
+                </div>
+            </div>
+
+            <div class="group">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="flex-none w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">3</span>
+                    <h2 class="text-2xl font-bold">
+                        <span class="lang-ko">다크 모드 & 다국어 설정</span>
+                        <span class="lang-en">Dark Mode & Multi-language</span>
+                    </h2>
+                </div>
+                <div class="pl-14 text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                    <p class="lang-ko">사용자의 가독성을 위해 테마 전환 버튼과 언어 전환 기능을 추가합니다. Tailwind CSS의 'dark' 클래스와 간단한 JavaScript 함수로 구현할 수 있습니다.</p>
+                    <p class="lang-en">Add a theme toggle and language switch for user readability. This can be implemented with Tailwind CSS's 'dark' class and simple JavaScript functions.</p>
+                </div>
+            </div>
+
+            <div class="group border-t border-zinc-200 dark:border-zinc-800 pt-16">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="flex-none w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold">4</span>
+                    <h2 class="text-2xl font-bold">
+                        <span class="lang-ko">GitHub Pages 배포</span>
+                        <span class="lang-en">Deploy to GitHub Pages</span>
+                    </h2>
+                </div>
+                <div class="pl-14 text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                    <p class="lang-ko">마지막으로 `index.html` 파일을 저장한 뒤 GitHub Repository에 푸시하세요. 설정(Settings)의 Pages 탭에서 브랜치를 선택하면 전 세계 누구나 접속 가능한 URL이 생성됩니다.</p>
+                    <p class="lang-en">Finally, save your `index.html` file and push it to your GitHub Repository. Select the branch in the Pages tab of Settings to generate a URL accessible to anyone in the world.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-zinc-200 dark:border-zinc-800 py-12 text-center text-sm text-zinc-500">
+        <p>&copy; 2026 Apocalypse Girl Project. Built with Tailwind CSS.</p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />';
+            } else {
+                html.classList.add('dark');
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />';
+            }
+        }
+
+        function toggleLanguage() {
+            const html = document.documentElement;
+            if (html.getAttribute('lang') === 'ko') {
+                html.setAttribute('lang', 'en');
+            } else {
+                html.setAttribute('lang', 'ko');
+            }
+        }
+    </script>
+</body>
+</html>
